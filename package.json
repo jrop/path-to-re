@@ -7,6 +7,7 @@
     "_prettier": "prettier --use-tabs --no-semi --single-quote --trailing-comma es5 --no-bracket-spacing --jsx-bracket-same-line 'src/**/*.js'",
     "build": "babel src -d lib",
     "build:watch": "babel -w src -d lib",
+    "coverage": "istanbul cover src/test.js",
     "lint": "npm run _prettier -- -l",
     "lint:fix": "npm run _prettier -- --write",
     "precommit": "npm run lint",
