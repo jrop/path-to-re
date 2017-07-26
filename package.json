@@ -1,0 +1,29 @@
+{
+  "name": "path-to-re",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "_prettier": "prettier --use-tabs --no-semi --single-quote --trailing-comma es5 --no-bracket-spacing --jsx-bracket-same-line 'src/**/*.js'",
+    "build": "babel src -d lib",
+    "build:watch": "babel -w src -d lib",
+    "lint": "npm run _prettier -- -l",
+    "lint:fix": "npm run _prettier -- --write",
+    "precommit": "npm run lint",
+    "prepare": "npm run build && npm test",
+    "test": "node src/test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "husky": "^0.14.3",
+    "istanbul": "^0.4.5",
+    "prettier": "^1.5.3",
+    "tape": "^4.7.0"
+  },
+  "repository": "jrop/path-to-re",
+  "files": ["lib/index.js"]
+}
