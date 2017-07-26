@@ -12,11 +12,14 @@ const toRe = path => {
 					if (s.charAt(s.length - 1) == '?') return '(?:/([^/]*)/?)'
 					else return '(?:/([^/]*))'
 				})
-			else if (part != '') part = `/${part}`
+			else if (part != '')
+				if (part.charAt(part.length - 1) == '?')
+					part = `(?:/${part.substr(0, part.length - 1)}|/)?`
+				else part = `/${part}`
 			return part
 		})
 		.join('')
-	const re = new RegExp(`^${reStr || '\\/'}$`)
+	const re = new RegExp(`^${reStr || '/'}$`)
 	re.keys = keys
 	return re
 }

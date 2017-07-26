@@ -15,6 +15,12 @@ test('/path', t => {
 	t.equal(match('/path', '/'), null)
 })
 
+test('/path?/other', t => {
+	t.plan(2)
+	t.deepLooseEqual(match('/path?/other', '/path/other'), {})
+	t.deepLooseEqual(match('/path?/other', '/other'), {})
+})
+
 test('/path/:param', t => {
 	t.plan(3)
 	t.deepLooseEqual(match('/path/:param', '/path/value'), {param: 'value'})
