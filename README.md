@@ -1,5 +1,7 @@
 # path-to-re
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jrop/path-to-re.svg)](https://greenkeeper.io/)
+
 > A lightweight alternative to `path-to-regexp`
 
 # Installation
